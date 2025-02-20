@@ -8,6 +8,9 @@
     <title>{{ isset($title) ? $title . ' - ' . config('app.name') : config('app.name') }}</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 
 <body class="min-h-screen font-sans antialiased bg-base-200/50 dark:bg-base-200">
@@ -50,10 +53,11 @@
                     <x-menu-separator />
                 @endif
 
-                <x-menu-item title="User" icon="o-sparkles" link="/" />
-                <x-menu-sub title="Settings" icon="o-cog-6-tooth">
-                    <x-menu-item title="Wifi" icon="o-wifi" link="####" />
-                    <x-menu-item title="Archives" icon="o-archive-box" link="####" />
+                <x-menu-item title="Todo List" icon="o-sparkles" link="/" />
+                <x-menu-item title="Create Task" icon="o-plus" link="/tasks/create" />
+                <x-menu-sub title="Category" icon="o-folder" link="####">
+                    <x-menu-item title="Create" icon="o-plus" link="/category/create" />
+                    <x-menu-item title="List" icon="o-list-bullet" link="####" />
                 </x-menu-sub>
             </x-menu>
         </x-slot:sidebar>
@@ -65,7 +69,7 @@
     </x-main>
 
     {{--  TOAST area --}}
-    <x-toast />
+    <x-toast position="toast-bottom toast-right" />
 </body>
 
 </html>

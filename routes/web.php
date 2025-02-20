@@ -14,4 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', Welcome::class);
+
+Route::get('/tasks/create', App\Livewire\Tasks\Create::class);
+
+Route::get('/category/create', App\Livewire\Category\Create::class);
