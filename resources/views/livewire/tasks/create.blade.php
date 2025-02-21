@@ -10,7 +10,7 @@
 @endphp
 <div>
     <!-- HEADER -->
-    <x-header title="List" separator progress-indicator>
+    <x-header title="Create Task" separator progress-indicator>
         <x-slot:middle class="!justify-end">
         </x-slot:middle>
         <x-slot:actions>
@@ -20,21 +20,27 @@
 
     <x-form wire:submit="save" no-separator>
         <x-input label="Title" wire:model="title" />
-        @error('title')
-            <span class="error">{{ $message }}</span>
-        @enderror
+        <div>
+            @error('title')
+                <span class="error">{{ $message }}</span>
+            @enderror
+        </div>
 
         <x-input label="Description" wire:model="description" />
-        @error('description')
-            <span class="error">{{ $message }}</span>
-        @enderror
+        <div>
+            @error('description')
+                <span class="error">{{ $message }}</span>
+            @enderror
+        </div>
 
-        <x-select label="Disabled options" :options="$priorities" wire:model="priority" />
+        <x-select label="Priority" :options="$priorities" wire:model="priority" />
+
+        <x-select label="Category" :options="$categories" wire:model="category_id" />
 
         <x-datepicker label="Due Date" wire:model="due_date" icon="o-calendar-days" :config="$config" />
 
         <x-slot:actions>
-            <x-button label="Cancel" />
+            <x-button label="Clear Fields" icon="o-tag" wire:click="clear" spinner class="btn-ghost" />
             <x-button label="Add Task" class="btn-primary" type="submit" spinner="save" />
         </x-slot:actions>
     </x-form>
