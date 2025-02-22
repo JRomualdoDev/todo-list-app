@@ -5,14 +5,21 @@ namespace App\Livewire\Category;
 use Livewire\Component;
 use App\Models\Category;
 use Livewire\WithPagination;
+use Livewire\Attributes\Validate;
 
 class Show extends Component
 {
 
     use WithPagination;
     
+
+    #[Validate('required', message: 'The name is required')]
+    #[Validate('min:3', message: 'Name needs at least 3 characters')]
+    public string $name = '';
+
     public array $sortBy = ['column' => 'name', 'direction' => 'asc'];
-    // public $categories;
+    public bool $myModal2 = false;
+    public string $myid = "1";
 
 
     public function mount() {
@@ -41,6 +48,32 @@ class Show extends Component
              ->paginate(5);
              
      }
+
+    public function save() {
+        $this->validate();
+
+        dd($this->name);
+
+        // try {
+        //    Category::updated([
+        //        'name' => $this->name
+        //    ])
+        // catch (\Exception $e) {
+            
+        // }
+        
+        $this->sucess('Category updated successfully');
+    }
+
+    public function openModal($id)
+{
+    $category = Category::find($id);
+    if ($category) {
+        $this->myid = $category->id;
+        $this->name = $category->name; 
+    }
+    $this->myModal2 = true;
+}
 
     public function render()
     {
