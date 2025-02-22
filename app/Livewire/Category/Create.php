@@ -26,7 +26,7 @@ class Create extends Component
             ]);
         }
         catch (\Exception $e) {
-            // $this->error($e->getMessage());
+            $this->error('Error creating category.');
         }
 
         $this->reset('name');

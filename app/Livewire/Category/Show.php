@@ -6,11 +6,13 @@ use Livewire\Component;
 use App\Models\Category;
 use Livewire\WithPagination;
 use Livewire\Attributes\Validate;
+use Mary\Traits\Toast;
 
 class Show extends Component
 {
 
     use WithPagination;
+    use Toast;
     
 
     #[Validate('required', message: 'The name is required')]
@@ -52,17 +54,15 @@ class Show extends Component
     public function save() {
         $this->validate();
 
-        dd($this->name);
+        try {
+           Category::find($this->myid)->update([
+               'name' => $this->name
+           ]);
+        } catch (\Throwable $th) {
+            $this->error('Error updating category.');
+        } 
 
-        // try {
-        //    Category::updated([
-        //        'name' => $this->name
-        //    ])
-        // catch (\Exception $e) {
-            
-        // }
-        
-        $this->sucess('Category updated successfully');
+        $this->myModal2 = false;      
     }
 
     public function openModal($id)

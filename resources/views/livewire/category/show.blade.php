@@ -32,6 +32,4 @@ $headers = [['key' => 'id', 'label' => 'ID', 'class' => 'w-16'], ['key' => 'name
     <x-table :headers="$headers" :rows="$categories" with-pagination striped @row-click="$wire.openModal($event.detail.id)"
         :sort-by="$sortBy" />
 
-
-
 </div>
