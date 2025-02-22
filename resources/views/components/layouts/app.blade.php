@@ -57,7 +57,7 @@
                 <x-menu-item title="Create Task" icon="o-plus" link="/tasks/create" />
                 <x-menu-sub title="Category" icon="o-folder" link="####">
                     <x-menu-item title="Create" icon="o-plus" link="/category/create" />
-                    <x-menu-item title="List" icon="o-list-bullet" link="####" />
+                    <x-menu-item title="List" icon="o-list-bullet" link="/category/show" />
                 </x-menu-sub>
             </x-menu>
         </x-slot:sidebar>

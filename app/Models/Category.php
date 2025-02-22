@@ -17,8 +17,6 @@ class Category extends Model
      */
     protected $fillable = [
         'name',
-        'created_at',
-        'updated_at',
     ];
 
     /**
@@ -43,7 +41,8 @@ class Category extends Model
     protected function casts(): array
     {
         return [
-            
+            'created_at' => 'datetime',
+            'updated_at' => 'datetime',
         ];
     }
 }
