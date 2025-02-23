@@ -19,6 +19,8 @@ class Show extends Component
     #[Validate('min:3', message: 'Name needs at least 3 characters')]
     public string $name = '';
 
+    public string $search = '';
+
     public array $sortBy = ['column' => 'name', 'direction' => 'asc'];
     public bool $myModal2 = false;
     public string $myid = "1";
@@ -45,6 +47,13 @@ class Show extends Component
 
      public function categories()
      {
+        if($this->search) {
+            return Category::query()
+                ->where('name', 'like', '%' . $this->search . '%')
+                ->orderBy($this->sortBy['column'], $this->sortBy['direction'])
+                ->paginate(5);
+        }
+        
          return Category::query()
              ->orderBy($this->sortBy['column'], $this->sortBy['direction'])
              ->paginate(5);

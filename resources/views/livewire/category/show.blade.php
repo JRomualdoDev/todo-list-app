@@ -10,6 +10,7 @@ $headers = [['key' => 'id', 'label' => 'ID', 'class' => 'w-16'], ['key' => 'name
         <x-slot:middle class="!justify-end">
         </x-slot:middle>
         <x-slot:actions>
+            <x-input icon="o-bolt" placeholder="Search..." wire:model.change="search" />
         </x-slot:actions>
     </x-header>
 
@@ -31,5 +32,6 @@ $headers = [['key' => 'id', 'label' => 'ID', 'class' => 'w-16'], ['key' => 'name
     {{-- You can use any `$wire.METHOD` on `@row-click` --}}
     <x-table :headers="$headers" :rows="$categories" with-pagination striped @row-click="$wire.openModal($event.detail.id)"
         :sort-by="$sortBy" />
+
 
 </div>
