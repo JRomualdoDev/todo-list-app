@@ -1,6 +1,6 @@
 <div>
     <!-- HEADER -->
-    <x-header title="List" separator progress-indicator>
+    <x-header title="List Todos" separator progress-indicator>
         <x-slot:middle class="!justify-end">
             <x-input placeholder="Search..." wire:model.live.debounce="search" clearable icon="o-magnifying-glass" />
         </x-slot:middle>

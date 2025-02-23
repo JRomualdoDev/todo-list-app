@@ -53,7 +53,7 @@
                     <x-menu-separator />
                 @endif
 
-                <x-menu-item title="Todo List" icon="o-sparkles" link="/" />
+                <x-menu-item title="Todo List" icon="o-sparkles" link="/tasks/show" />
                 <x-menu-item title="Create Task" icon="o-plus" link="/tasks/create" />
                 <x-menu-sub title="Category" icon="o-folder" link="####">
                     <x-menu-item title="Create" icon="o-plus" link="/category/create" />

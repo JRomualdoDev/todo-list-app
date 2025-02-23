@@ -20,22 +20,14 @@
 
     <x-form wire:submit="save" no-separator>
         <x-input label="Title" wire:model="title" />
-        <div>
-            @error('title')
-                <span class="error">{{ $message }}</span>
-            @enderror
-        </div>
 
         <x-input label="Description" wire:model="description" />
-        <div>
-            @error('description')
-                <span class="error">{{ $message }}</span>
-            @enderror
-        </div>
 
-        <x-select label="Priority" :options="$priorities" wire:model="priority" />
 
-        <x-select label="Category" :options="$categories" wire:model="category_id" />
+        <x-select label="Priority" :options="$priorities" placeholder="Select Priority" wire:model="priority" />
+
+
+        <x-select label="Category" :options="$categories" placeholder="Select Category" wire:model="category_id" />
 
         <x-datepicker label="Due Date" wire:model="due_date" icon="o-calendar-days" :config="$config" />
 

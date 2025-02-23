@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Livewire\Category;
+namespace App\Livewire\Tasks;
 
 use Livewire\Component;
-use App\Models\Category;
+use App\Models\Task;
 use Livewire\WithPagination;
 use Livewire\Attributes\Validate;
 use Mary\Traits\Toast;
@@ -18,49 +18,34 @@ class Show extends Component
 
     #[Validate('required', message: 'The name is required')]
     #[Validate('min:3', message: 'Name needs at least 3 characters')]
-    public string $name = '';
+    public string $title = '';
 
     public array $headers = [
         ['key' => 'id', 'label' => 'ID', 'class' => 'w-16'], 
-        ['key' => 'name', 'label' => 'Name', 'class' => 'w-16'], 
-        ['key' => 'created_at', 'label' => 'Created At', 'class' => 'w-16'], 
-        ['key' => 'updated_at', 'label' => 'Updated At', 'class' => 'w-16']
+        ['key' => 'title', 'label' => 'Title', 'class' => 'w-16'], 
+        ['key' => 'description', 'label' => 'Description', 'class' => 'w-16'],
+        ['key' => 'priority', 'label' => 'Priority', 'class' => 'w-16'], 
+        ['key' => 'category.name', 'label' => 'Category', 'class' => 'w-16'], 
+        ['key' => 'due_date', 'label' => 'Due Date', 'class' => 'w-16'], 
     ];
-
 
     public string $search = '';
 
-    public array $sortBy = ['column' => 'name', 'direction' => 'asc'];
+    public array $sortBy = ['column' => 'title', 'direction' => 'asc'];
     public bool $myModal2 = false;
     public string $myid = "1";
 
 
     public function mount() {
 
-        // $this->categories = Category::all()->map(function ($category) {
-        //     return [
-        //         'id' => $category->id,
-        //         'name' => $category->name,
-        //         'created_at' => $category->created_at->format('m/d/Y H:i:s'),
-        //         'updated_at' => $category->updated_at->format('m/d/Y H:i:s')
-        //     ];
-        // })->toArray();
-        // dd($this->categories);
-
-        // $this->categories = Category::query()
-        //     ->orderBy(...array_values($this->sortBy))
-        //     ->take(3)
-        //     ->get();
-
     }
 
-    
-    public function categories()
+    public function tasks()
     {
-        $query = Category::query();
+        $query = Task::query();
         
         if ($this->search) {
-            $query->where('name', 'like', '%' . $this->search . '%');
+            $query->where('title', 'like', '%' . $this->search . '%');
         }
         
         $query->orderBy($this->sortBy['column'], $this->sortBy['direction']);
@@ -73,7 +58,7 @@ class Show extends Component
 
         try {
            Category::find($this->myid)->update([
-               'name' => $this->name
+               'title' => $this->title
            ]);
         } catch (\Throwable $th) {
             $this->error('Error updating category.');
@@ -94,8 +79,8 @@ class Show extends Component
 
     public function render()
     {
-        return view('livewire.category.show', [
-            'categories' => $this->categories()
+        return view('livewire.tasks.show', [
+            'tasks' => $this->tasks()
         ]);
     }
 }

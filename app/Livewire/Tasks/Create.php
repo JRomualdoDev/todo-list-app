@@ -23,9 +23,14 @@ class Create extends Component
     public string $description = '';
 
     public $categories = [];
+
+    #[Validate('required', message: 'The priority is required')]
     public string $priority = '';
+
     public string $due_date = '';
     public string $message = '';
+
+    #[Validate('required', message: 'The category is required')]
     public string $category_id = '';
 
 
@@ -37,7 +42,7 @@ class Create extends Component
     }
 
     public function save() {
-   
+        
         $this->validate();
         
         try {           
@@ -53,6 +58,7 @@ class Create extends Component
             $this->success('Task created successfully');
         }
         catch (\Exception $e) {
+            $this->erro($e->getMessage());
             // $this->error('Error creating task.');
         }
 
