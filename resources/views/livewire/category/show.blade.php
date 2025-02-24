@@ -4,7 +4,7 @@
         <x-slot:middle class="!justify-end">
         </x-slot:middle>
         <x-slot:actions>
-            <x-input icon="o-bolt" placeholder="Search..." wire:model.change="search" />
+            <x-input icon="o-bolt" placeholder="Search Name..." wire:model.change="search" />
         </x-slot:actions>
     </x-header>
 

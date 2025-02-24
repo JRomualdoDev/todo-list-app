@@ -51,7 +51,7 @@ class Show extends Component
         $query = Task::query();
         
         if ($this->search) {
-            $query->where('title', 'like', '%' . $this->search . '%');
+            $query->where('title', 'ilike', '%' . $this->search . '%');
         }
         
         $query->orderBy($this->sortBy['column'], $this->sortBy['direction']);
@@ -95,7 +95,7 @@ class Show extends Component
         catch (\Throwable $th) {
             $this->error("Error deleting Task");
         }
-        
+
         // $this->warning("Will delete #$id", 'It is fake.', position: 'toast-bottom');
     }
     public function render()
