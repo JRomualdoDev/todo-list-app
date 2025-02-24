@@ -83,14 +83,25 @@ class Show extends Component
     }
 
     public function openModal($id)
-{
-    $category = Category::find($id);
-    if ($category) {
-        $this->myid = $category->id;
-        $this->name = $category->name; 
+    {
+        $category = Category::find($id);
+        if ($category) {
+            $this->myid = $category->id;
+            $this->name = $category->name; 
+        }
+        $this->myModal2 = true;
     }
-    $this->myModal2 = true;
-}
+
+    public function delete($id): void
+    {
+        
+        try {
+            Category::find($id)->delete();
+        } catch (\Throwable $th) {
+            $this->error('Error deleting category.');
+        }
+        // $this->warning("Will delete #$id", 'It is fake.', position: 'toast-bottom');
+    }
 
     public function render()
     {

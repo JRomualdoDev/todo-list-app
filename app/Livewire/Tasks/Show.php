@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Tasks;
 
+use App\Models\Category;
 use Livewire\Component;
 use App\Models\Task;
 use Livewire\WithPagination;
@@ -20,6 +21,11 @@ class Show extends Component
     #[Validate('min:3', message: 'Name needs at least 3 characters')]
     public string $title = '';
 
+    public string $description = '';
+    public string $priority = '';
+    public string $due_date = '';
+    public string $category_id = '';
+
     public array $headers = [
         ['key' => 'id', 'label' => 'ID', 'class' => 'w-16'], 
         ['key' => 'title', 'label' => 'Title', 'class' => 'w-16'], 
@@ -32,8 +38,8 @@ class Show extends Component
     public string $search = '';
 
     public array $sortBy = ['column' => 'title', 'direction' => 'asc'];
-    public bool $myModal2 = false;
-    public string $myid = "1";
+    public bool $myModalTask = false;
+    public string $id = "1";
 
 
     public function mount() {
@@ -68,15 +74,30 @@ class Show extends Component
     }
 
     public function openModal($id)
-{
-    $category = Category::find($id);
-    if ($category) {
-        $this->myid = $category->id;
-        $this->name = $category->name; 
+    {
+        $task = Task::find($id);
+        if ($task) {
+            $this->id = $task->id;
+            $this->title = $task->title;
+            $this->description = $task->description;
+            $this->priority = $task->priority;
+            $this->due_date = $task->due_date;
+            $this->category_id = $task->category_id; 
+        }
+        $this->myModalTask = true;
     }
-    $this->myModal2 = true;
-}
 
+    public function delete($id): void
+    {
+        try {
+            Category::find($id)->delete();
+        }
+        catch (\Throwable $th) {
+            $this->error("Error deleting Task");
+        }
+        
+        // $this->warning("Will delete #$id", 'It is fake.', position: 'toast-bottom');
+    }
     public function render()
     {
         return view('livewire.tasks.show', [

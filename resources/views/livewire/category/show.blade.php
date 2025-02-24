@@ -24,7 +24,15 @@
     </x-modal>
 
     {{-- You can use any `$wire.METHOD` on `@row-click` --}}
-    <x-table :headers="$headers" :rows="$categories" with-pagination striped @row-click="$wire.openModal($event.detail.id)"
-        :sort-by="$sortBy" />
+    <x-table :headers="$headers" :rows="$categories" with-pagination striped {{-- @row-click="$wire.openModal($event.detail.id)" --}} :sort-by="$sortBy">
+        @scope('actions', $categories)
+            <div class="flex">
+                <x-button icon="o-pencil-square" wire:click="openModal({{ $categories['id'] }})" spinner
+                    class="btn-ghost btn-sm text-green-500" />
+                <x-button icon="o-trash" wire:click="delete({{ $categories['id'] }})" spinner
+                    class="btn-ghost btn-sm text-red-500" />
+            </div>
+        @endscope
+    </x-table>
 
 </div>
