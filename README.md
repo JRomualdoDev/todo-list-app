@@ -9,7 +9,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/JRomualdoDev/todo-list-app">
-    <img src="https://github.com/JRomualdoDev/todo-list-app/blob/main/public/screen.png?raw=true" alt="Logo" width="80" height="80">
+    <img src="https://github.com/JRomualdoDev/todo-list-app/blob/main/public/screen.png?raw=true" alt="Logo" width="280" height="180">
   </a>
 
   <h3 align="center">Todo List App</h3>
@@ -36,12 +36,9 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Pré requisitos</a></li>
         <li><a href="#installation">Instalação</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Uso</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Conhecimentos</a></li>
@@ -119,14 +116,14 @@ Project Link: [https://github.com/JRomualdoDev/todo-list-app](https://github.com
 
 
 <!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+<!-- ## Acknowledgments
 
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
 * [Choose an Open Source License](https://choosealicense.com)
 
 
-<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
+<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p> -->
 
 
 
