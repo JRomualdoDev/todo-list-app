@@ -9,7 +9,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/JRomualdoDev/todo-list-app">
-    <img src="https://github.com/JRomualdoDev/todo-list-app/blob/main/public/screen.png?raw=true" alt="Logo" width="280" height="180">
+    <img src="https://github.com/JRomualdoDev/todo-list-app/blob/main/public/screen.png?raw=true" alt="Logo" width="580" height="280">
   </a>
 
   <h3 align="center">Todo List App</h3>
@@ -55,7 +55,7 @@
 Apenas um simples projeto para testar os recursos do starter kit react do laravel 12.
 
 O projeto conta com seguintes exemplos:
-* Lista de todo lista.
+* Lista de todo.
 * Criar listas.
 * Cria categoria da lista.
 * Listar as categorias.
@@ -90,7 +90,6 @@ Para rodar local apenas copie e siga estes simples passos.
 2. Install NPM packages
    ```sh
    npm install
-   ```
    ```
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
@@ -133,7 +132,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [stars-shield]: https://img.shields.io/github/stars/JRomualdoDev/todo-list-app?style=for-the-badge
 [issues-url]: https://github.com/JRomualdoDev/todo-list-app/issues
 [issues-shield]: https://img.shields.io/github/issues/JRomualdoDev/todo-list-app?style=for-the-badge
-[license-url]: https://github.com/JRomualdoDev/todo-list-app/blob/master/LICENSE.txt
+[license-url]: https://github.com/JRomualdoDev/todo-list-app/blob/main/LICENSE.txt
 [license-shield]: https://img.shields.io/github/license/JRomualdoDev/todo-list-app?style=for-the-badge
 
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
