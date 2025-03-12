@@ -9,7 +9,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/JRomualdoDev/todo-list-app">
-    <img src="https://github.com/JRomualdoDev/todo-list-app/blob/main/public/screen.png?raw=true" alt="Logo" width="680" height="480">
+    <img src="https://github.com/JRomualdoDev/todo-list-app/blob/main/public/screen.png?raw=true" alt="Logo" width="880" height="480">
   </a>
 
   <h3 align="center">Todo List App</h3>
