@@ -223,8 +223,12 @@ Use this space to list resources you find helpful and would like to give credit 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [stars-url]: https://github.com/JRomualdoDev/todo-list-app/stargazers
+[stars-shield]: https://img.shields.io/github/stars/JRomualdoDev/todo-list-app?style=for-the-badge
 [issues-url]: https://github.com/JRomualdoDev/todo-list-app/issues
+[issues-shield]: https://img.shields.io/github/issues/JRomualdoDev/todo-list-app?style=for-the-badge
 [license-url]: https://github.com/JRomualdoDev/todo-list-app/blob/master/LICENSE.txt
+[license-shield]: https://img.shields.io/github/license/JRomualdoDev/todo-list-app?style=for-the-badge
+
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
