@@ -24,6 +24,7 @@ class Show extends Component
     public string $description = '';
     public string $priority = '';
     public string $due_date = '';
+    public bool   $completed = false;
     public string $category_id = '';
 
     public array $headers = [
@@ -32,7 +33,8 @@ class Show extends Component
         ['key' => 'description', 'label' => 'Description', 'class' => 'w-16'],
         ['key' => 'priority', 'label' => 'Priority', 'class' => 'w-16'], 
         ['key' => 'category.name', 'label' => 'Category', 'class' => 'w-16'], 
-        ['key' => 'due_date', 'label' => 'Due Date', 'class' => 'w-16'], 
+        ['key' => 'due_date', 'label' => 'Due Date', 'class' => 'w-16'],
+        ['key' => 'completed', 'label' => 'Completed', 'class' => 'w-16'] 
     ];
 
     public string $search = '';

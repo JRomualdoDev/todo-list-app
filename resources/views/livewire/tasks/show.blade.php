@@ -29,6 +29,10 @@
     {{-- You can use any `$wire.METHOD` on `@row-click` --}}
     <x-table :headers="$headers" :rows="$tasks" with-pagination striped {{-- @row-click="$wire.openModal($event.detail.id)" --}} :sort-by="$sortBy">
 
+        @scope('cell_completed', $tasks)
+            <x-badge :value="$tasks->completed" class="{{ $tasks->completed === 'Finished' ? 'badge-primary' : 'bg-green-900' }}" />
+        @endscope
+
         @scope('actions', $tasks)
             <div class="flex">
                 <x-button icon="o-pencil-square" wire:click="openModal({{ $tasks['id'] }})" spinner

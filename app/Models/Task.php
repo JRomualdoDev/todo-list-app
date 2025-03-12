@@ -35,6 +35,11 @@ class Task extends Model
         
     ];
 
+    public function getCompletedAttribute($value)
+    {
+        return $value == 1 ? 'Finished' : 'Progress';
+    }
+
     public function category() 
     {
         return $this->belongsTo(Category::class);
