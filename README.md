@@ -132,7 +132,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [stars-shield]: https://img.shields.io/github/stars/JRomualdoDev/todo-list-app?style=for-the-badge
 [issues-url]: https://github.com/JRomualdoDev/todo-list-app/issues
 [issues-shield]: https://img.shields.io/github/issues/JRomualdoDev/todo-list-app?style=for-the-badge
-[license-url]: https://github.com/JRomualdoDev/todo-list-app/blob/main/LICENSE.txt
+[license-url]: https://github.com/JRomualdoDev/todo-list-app/blob/main/LICENSE
 [license-shield]: https://img.shields.io/github/license/JRomualdoDev/todo-list-app?style=for-the-badge
 
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
